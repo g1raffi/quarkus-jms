@@ -1,0 +1,76 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1508920120304
+Build-Jdk: 1.8.0_121
+Build-Timestamp: Wed, 25 Oct 2017 04:20:07 -0400
+Built-By: slave
+Bundle-ClassPath: .,WEB-INF/lib/jolokia-core-1.3.7.jar,WEB-INF/lib/json-
+ simple-1.1.1.jar,WEB-INF/lib/hawtio-core-1.5.5.jar,WEB-INF/lib/hawtio-u
+ til-1.5.5.jar,WEB-INF/lib/slf4j-api-1.7.21.jar,WEB-INF/lib/hawtio-syste
+ m-1.5.5.jar,WEB-INF/lib/httpclient-4.5.2.jar,WEB-INF/lib/httpcore-4.4.4
+ .jar,WEB-INF/lib/commons-io-2.2.jar,WEB-INF/lib/commons-fileupload-1.3.
+ 2.jar,WEB-INF/lib/commons-codec-1.10.jar,WEB-INF/lib/guava-21.0.jar,WEB
+ -INF/lib/hawtio-git-1.5.5.jar
+Bundle-Description: hawtio :: hawtio-web
+Bundle-DocURL: http://www.jboss.org
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: hawtio :: hawtio-web
+Bundle-SymbolicName: io.hawt.hawtio-web
+Bundle-Vendor: JBoss by Red Hat
+Bundle-Version: 1.5.5
+Created-By: Apache Maven Bundle Plugin
+Embed-Dependency: *;scope=compile|runtime;artifactId=!org.osgi.enterpris
+ e|org.osgi.core
+Embed-Directory: WEB-INF/lib
+Embed-Transitive: true
+Embedded-Artifacts: WEB-INF/lib/jolokia-core-1.3.7.jar;g="org.jolokia";a
+ ="jolokia-core";v="1.3.7",WEB-INF/lib/json-simple-1.1.1.jar;g="com.goog
+ lecode.json-simple";a="json-simple";v="1.1.1",WEB-INF/lib/hawtio-core-1
+ .5.5.jar;g="io.hawt";a="hawtio-core";v="1.5.5",WEB-INF/lib/hawtio-util-
+ 1.5.5.jar;g="io.hawt";a="hawtio-util";v="1.5.5",WEB-INF/lib/slf4j-api-1
+ .7.21.jar;g="org.slf4j";a="slf4j-api";v="1.7.21",WEB-INF/lib/hawtio-sys
+ tem-1.5.5.jar;g="io.hawt";a="hawtio-system";v="1.5.5",WEB-INF/lib/httpc
+ lient-4.5.2.jar;g="org.apache.httpcomponents";a="httpclient";v="4.5.2",
+ WEB-INF/lib/httpcore-4.4.4.jar;g="org.apache.httpcomponents";a="httpcor
+ e";v="4.4.4",WEB-INF/lib/commons-io-2.2.jar;g="commons-io";a="commons-i
+ o";v="2.2",WEB-INF/lib/commons-fileupload-1.3.2.jar;g="commons-fileuplo
+ ad";a="commons-fileupload";v="1.3.2",WEB-INF/lib/commons-codec-1.10.jar
+ ;g="commons-codec";a="commons-codec";v="1.10",WEB-INF/lib/guava-21.0.ja
+ r;g="com.google.guava";a="guava";v="21.0",WEB-INF/lib/hawtio-git-1.5.5.
+ jar;g="io.hawt";a="hawtio-git";v="1.5.5"
+Implementation-Title: hawtio-web
+Implementation-URL: http://hawt.io/hawtio-web/
+Implementation-Vendor: JBoss by Red Hat
+Implementation-Vendor-Id: io.hawt
+Implementation-Version: 1.5.5
+Import-Package: org.osgi.framework;version="[1.5,2)",org.osgi.util.track
+ er;version="[1.4,2)",org.apache.commons.logging;resolution:=optional,ja
+ vax.annotation,javax.crypto,javax.crypto.interfaces,javax.crypto.spec,j
+ avax.management,javax.management.openmbean,javax.management.relation,ja
+ vax.naming,javax.naming.directory,javax.naming.ldap,javax.net,javax.net
+ .ssl,javax.security.auth,javax.security.auth.callback,javax.security.au
+ th.login,javax.security.auth.spi,javax.security.auth.x500,javax.servlet
+ ,javax.servlet.http,javax.xml.bind,javax.xml.datatype,javax.xml.parsers
+ ,org.ietf.jgss,org.w3c.dom,org.xml.sax,org.xml.sax.helpers,sun.misc,org
+ .osgi.framework.wiring;version="[1.0,2)",io.hawt.git;resolution:=option
+ al;version="[1.4,2)",io.hawt.util;resolution:=optional;version="[1.4,2)
+ ",io.hawt.util.introspect;resolution:=optional;version="[1.4,2)",io.haw
+ t.util.introspect.support;resolution:=optional;version="[1.4,2)",org.ec
+ lipse.jetty.plus.jaas.spi;resolution:=optional,org.eclipse.jetty.plus.j
+ aas.callback;resolution:=optional,org.slf4j;resolution:=optional;versio
+ n="[1.6,2)",org.apache.karaf.jaas.boot.principal;resolution:=optional
+Java-Vendor: Oracle Corporation
+Java-Version: 1.8.0_121
+Os-Arch: amd64
+Os-Name: Linux
+Os-Version: 3.10.0-693.2.1.el7.x86_64
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Scm-Connection: scm:git:git@github.com:hawtio/hawtio.git/hawtio-web
+Scm-Revision: b933b370f4c78a5657b538c1da0609305ecd9b52
+Scm-Url: git@github.com:hawtio/hawtio.git/hawtio-web
+Specification-Title: hawtio-web
+Specification-Vendor: JBoss by Red Hat
+Specification-Version: 1.5.5
+Tool: Bnd-3.0.0.201509101326
+Web-ContextPath: /hawtio
+Webapp-Context: /hawtio
