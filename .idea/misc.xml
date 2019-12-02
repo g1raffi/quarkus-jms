@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="Quarkus" url="file://$PROJECT_DIR$/quarkus-consumer" />
     <file type="Quarkus" url="file://$PROJECT_DIR$/quarkus-producer" />
   </component>
   <component name="MavenProjectsManager">

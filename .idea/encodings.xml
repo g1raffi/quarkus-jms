@@ -3,6 +3,10 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/quarkus-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/quarkus-consumer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/quarkus-consumer/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/quarkus-producer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/quarkus-producer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/quarkus-producer/src/main/resources" charset="UTF-8" />
   </component>
 </project>

@@ -41,7 +41,7 @@ public class MessageProducer implements Runnable {
         try (JMSContext context = connectionFactory.createContext(Session.AUTO_ACKNOWLEDGE)) {
             double random = Math.random();
             log.info(">> Sending message: " + random);
-            context.createProducer().send(context.createQueue("Messages"), objectMapper.writeValueAsString(random));
+            context.createProducer().send(context.createTopic("TestTopic"), objectMapper.writeValueAsString(random));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
