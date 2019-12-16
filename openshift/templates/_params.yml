@@ -1,0 +1,108 @@
+parameters:
+  ###############################################
+  ### Metadata
+  ###############################################
+  - name: METADATA_LABELS_APPLICATION
+    value: quarkus-jms
+
+  - name: METADATA_LABELS_TEMPLATE
+    value: quarkus-jms-template
+
+  - name: METADATA_PROMETHEUS_ID
+    value: apps
+
+  - name: TIMEZONE
+    value: Europe/Zurich
+
+  ###############################################
+  ### Routes
+  ###############################################
+  - name: ROUTE_ARTEMIS_HOST
+    description: Route for the artemis web ui
+
+  ###############################################
+  ### Resource limits
+  ###############################################
+  # Artemis ActiveMQ
+  - name: ARTEMIS_CPU_LIMIT
+    value: 500m
+
+  - name: ARTEMIS_MEMORY_LIMIT
+    value: 2Gi
+
+  - name: ARTEMIS_CPU_REQUEST
+    value: 200m
+
+  - name: ARTEMIS_MEMORY_REQUEST
+    value: 1Gi
+
+  ###############################################
+  ### ARTEMIS ACTIVEMQ                        ###
+  ###############################################
+  - name: ARTEMIS_SERVICE_NAME
+    description: Name for the openshift service
+    value: artemis-activemq
+
+  - name: ARTEMIS_IMAGE_NAME
+    value: vromero/activemq-artemis
+
+  - name: ARTEMIS_IMAGE_TAG
+    value: 2.10.1
+
+  - name: ARTEMIS_VOLUME_CLAIM_SIZE
+    description: Amount of data for the pvc for artemis
+    value: 1G
+
+  - name: ARTEMIS_DISABLE_SECURITY
+    description: Enables non-tls connections
+    value: "true"
+
+  - name: ARTEMIS_RESTORE_CONFIGURATION
+    description: Restores configurations on container startup
+    value: "true"
+
+  - name: ARTEMIS_ENABLE_JMX_EXPORTER
+    description: Enables the jmx exporter function
+    value: "true"
+
+  - name: ARTEMIS_USER
+    description: User for the artemis activemq service
+    value: artemis
+
+  - name: ARTEMIS_PASSWORD
+    description: Password for the artemis user
+    generate: expression
+    from: "[a-zA-Z0-9]{16}"
+
+  - name: ARTEMIS_ANONYMOUS_LOGIN
+    description: Allows anonymous login for the artemis activemq system
+    value: "false"
+
+  - name: ARTEMIS_PORT_MQTT
+    description: Port for MQTT
+    value: "1883"
+
+  - name: ARTEMIS_PORT_WEB_SERVER
+    description: Port for the web server
+    value: "8161"
+
+  - name: ARTEMIS_PORT_HORNETQ
+    description: Port for HORNETQ
+    value: "5445"
+
+  - name: ARTEMIS_PORT_AMQP
+    description: Port for AMQP
+    value: "5672"
+
+  - name: ARTEMIS_PORT_JMX_EXPORTER
+    description: Port for the jmx exporter for prometheus
+    value: "9404"
+
+  - name: ARTEMIS_PORT_STOMP
+    description: Port for STOMP
+    value: "61613"
+
+  - name: ARTEMIS_PORT_CORE
+    description: Port for the core api
+    value: "61616"
+

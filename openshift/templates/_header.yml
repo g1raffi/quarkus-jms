@@ -1,0 +1,8 @@
+kind: Template
+apiVersion: v1
+metadata:
+  name: quarkus-jms
+  annotations:
+    iconClass: icon-java
+    tags: java,microservice,quarkus,jms,artemis
+objects:
