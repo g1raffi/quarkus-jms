@@ -4,7 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.quarkus.runtime.ShutdownEvent;
 import io.quarkus.runtime.StartupEvent;
 
-import javax.enterprise.context.ApplicationScoped;
+import javax.ejb.ActivationConfigProperty;
+import javax.ejb.MessageDriven;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.jms.*;
@@ -12,8 +13,17 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.logging.Logger;
 
-@ApplicationScoped
-public class MessageConsumer implements Runnable {
+@MessageDriven(activationConfig = {
+        @ActivationConfigProperty(
+                propertyName = "destination",
+                propertyValue = "TestTopic"
+        ),
+        @ActivationConfigProperty(
+                propertyName =  "destinationType",
+                propertyValue = "javax.jms.Topic"
+        )
+})
+public class SimpleConsumer implements Runnable {
 
     @Inject
     ConnectionFactory connectionFactory;
@@ -21,7 +31,7 @@ public class MessageConsumer implements Runnable {
     @Inject
     ObjectMapper objectMapper;
 
-    private final Logger log = Logger.getLogger(MessageConsumer.class.toString());
+    private final Logger log = Logger.getLogger(SimpleConsumer.class.toString());
     private final ExecutorService scheduler = Executors.newSingleThreadScheduledExecutor();
 
     void onStartup(@Observes StartupEvent event) {
@@ -35,11 +45,11 @@ public class MessageConsumer implements Runnable {
     @Override
     public void run() {
         try (JMSContext context = connectionFactory.createContext(Session.AUTO_ACKNOWLEDGE)) {
-            JMSConsumer consumer = context.createConsumer(context.createTopic("TestTopic"));
+            JMSConsumer consumer = context.createConsumer(context.createTopic("SimpleTopic?consumer.retroactive=true"));
             while (true) {
                 Message message = consumer.receive();
                 if (message == null) return;
-                log.info(">> Message received: " + message.getBody(String.class));
+                log.info(">> Simple received: " + message.getBody(String.class));
             }
         } catch (JMSException e) {
             e.printStackTrace();

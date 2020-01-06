@@ -9,6 +9,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.jms.ConnectionFactory;
+import javax.jms.DeliveryMode;
 import javax.jms.JMSContext;
 import javax.jms.Session;
 import java.util.concurrent.Executors;
@@ -41,7 +42,7 @@ public class MessageProducer implements Runnable {
         try (JMSContext context = connectionFactory.createContext(Session.AUTO_ACKNOWLEDGE)) {
             double random = Math.random();
             log.info(">> Sending message: " + random);
-            context.createProducer().send(context.createTopic("TestTopic"), objectMapper.writeValueAsString(random));
+            context.createProducer().setDeliveryMode(DeliveryMode.PERSISTENT).send(context.createTopic("SimpleTopic"), objectMapper.writeValueAsString(random));
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
